@@ -1,0 +1,184 @@
+@use './../utils/var' as *;
+@use './../utils/mixin' as *;
+
+.btn-skip {
+    position: fixed;
+    padding: 7px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+.header {
+    &.black {
+        > .default-menu {
+            mix-blend-mode: normal;
+            filter: invert(1) !important;
+        }
+    }
+    &.on {
+        > .default-menu {
+            transform: translateY(0);
+        }
+    }
+    > .default-menu {
+        pointer-events: none;
+        transition: transform 0.3s cubic-bezier(0.11, 0.7, 0.6, 0.94);
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        z-index: 98;
+        transform: translateY(calc(-100% - min(1.4583333333vw, 28px)));
+        top: 0;
+        padding: min(1.4583333333vw, 28px) min(3.125vw, 60px) min(2.8125vw, 54px);
+        mix-blend-mode: difference;
+
+        > .logo {
+            width: min(10.4166666667vw, 200px);
+            height: min(1.40625vw, 27px);
+            pointer-events: all;
+
+            > img {
+            }
+        }
+
+        > .menu {
+            display: flex;
+            align-items: center;
+            gap: min(4.1666666667vw, 80px);
+            color: #e8e8e8;
+            pointer-events: all;
+            > ul {
+                display: flex;
+                gap: min(2.0833333333vw, 40px);
+                > li {
+                    position: relative;
+                    &:focus-within {
+                        // 포커스 들어왔을 때 예: 배경 강조
+                        background-color: rgba(255, 255, 255, 0.05);
+                    }
+
+                    > a {
+                        position: relative;
+                        font-size: min(1.0416666667vw, 20px);
+                        line-height: min(1.25vw, 24px);
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        letter-spacing: 0.06em;
+                        display: flex;
+                        align-items: center;
+                        gap: min(0.2083333333vw, 4px);
+                        > .icon {
+                            display: inline-block;
+                            width: min(1.25vw, 24px);
+                            height: min(1.25vw, 24px);
+                            background: url(/images/common/icon_short_down_black.svg) no-repeat 50% / contain;
+                            filter: invert(1);
+                            transform: translateY(-1px) rotate(0);
+                            transition: transform 0.3s;
+                        }
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: 1px;
+                            background-color: #e8e8e8;
+                            transform: scaleX(0);
+                            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                            transform-origin: left;
+                        }
+                        &:hover {
+                            > .icon {
+                                transform: translateY(-2px) rotate(-180deg);
+                            }
+                        }
+                        &:hover::after {
+                            transform: scaleX(1);
+                        }
+                        &.active::after {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+            > .default-right {
+                display: flex;
+                gap: min(2.0833333333vw, 40px);
+                align-items: center;
+                .langs {
+                    position: relative;
+                    display: flex;
+                    column-gap: min(1.3020833333vw, 25px);
+                    width: -moz-fit-content;
+                    width: fit-content;
+                    pointer-events: all;
+                    z-index: 3;
+                    > a {
+                        font-size: min(0.9375vw, 18px);
+                        line-height: 1;
+                        color: #121212;
+                        letter-spacing: 0.04em;
+                        font-weight: 400;
+                        transition: opacity 0.1s;
+                        opacity: 0.5;
+                        &.active {
+                            opacity: 1;
+                            pointer-events: none;
+                            color: #ededed;
+                        }
+                    }
+                }
+                .langs:has(.btn-lang[href='/en'])::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 1px;
+                    height: min(0.7291666667vw, 14px);
+                    transform: translate(-50%, -50%);
+                    background-color: #434343;
+                }
+                .btn-menu {
+                    width: -moz-fit-content;
+                    width: fit-content;
+                    height: -moz-fit-content;
+                    height: fit-content;
+                    background: none;
+                    transition: opacity 0.2s;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                    img {
+                        width: min(2.5vw, 48px);
+                        height: min(2.5vw, 48px);
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 98;
+        transition: opacity 0.4s;
+        pointer-events: none;
+    }
+}

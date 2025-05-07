@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>trendship</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        <script src="./assets/js/jquery-3.7.1.min.js"></script>
+        <script src="./assets/js/jquery.easing.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.9/SmoothScroll.min.js"></script>
+        <a class="btn-skip" id="skip2025" href="/#content">본문 바로가기</a>
+        <header class="header on black">
+            <div class="default-menu">
+                <a class="logo active" href="#">
+                    <img
+                        alt="Trendship"
+                        loading="lazy"
+                        width="200"
+                        height="28"
+                        decoding="async"
+                        data-nimg="1"
+                        src="./assets/images/logo_trendship.svg"
+                        style="color: transparent"
+                    />
+                </a>
+                <nav class="menu">
+                    <ul>
+                        <li class="on"><a href="#" class="active">Home</a></li>
+                        <li>
+                            <a data-modal="trend" href="#" class="">Design Trend<span class="icon"></span></a>
+                        </li>
+                        <li>
+                            <a data-modal="exhibition" href="#">exhibition<span class="icon"></span></a>
+                        </li>
+                        <li><a href="#">Event</a></li>
+                    </ul>
+                    <div class="default-right">
+                        <div class="langs">
+                            <a class="btn-lang active" href="/">KOR</a>
+                            <a class="btn-lang" href="/en">ENG</a>
+                        </div>
+                        <button type="button" class="btn-menu">
+                            <img
+                                alt="menu"
+                                loading="lazy"
+                                width="100"
+                                height="100"
+                                decoding="async"
+                                data-nimg="1"
+                                src="./assets/images/icon_header_btn_menu.svg"
+                                style="color: transparent"
+                            />
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <!-- <aside class="aside-menu">
+                <div class="menu-top">
+                    <div class="btns">
+                        <button type="button" class="btn-share">
+                            <span class="blind">공유하기</span><span class="icon"></span>
+                        </button>
+                        <aside class="share-modal">
+                            <div class="menus">
+                                <a class="btn-kakao active" href="#"
+                                    ><span class="icon"></span><span class="text">카카오톡</span></a
+                                >
+                                <a class="btn-copy active" href="#"
+                                    ><span class="icon"></span><span class="text">URL 복사</span></a
+                                >
+                            </div>
+                        </aside>
+                        <button type="button" class="btn-close">
+                            <span class="blind">닫기</span><span class="icon"></span>
+                        </button>
+                    </div>
+                    <a class="user" href="#"><span class="icon"></span><span class="t6">로그인 해주세요.</span></a>
+                </div>
+                <div class="menu-center" data-lenis-prevent="true">
+                    <ul>
+                        <li class="on"><a class="tit active" href="#">Home</a></li>
+                        <li class="">
+                            <span class="tit">Design Trend<span class="icon"></span></span>
+                            <span class="links">
+                                <span>
+                                    <span class="main"><a href="#">2025 SY(E)NERGY</a></span>
+                                    <span class="sub-list">
+                                        <span><a href="#">- THEME 1. BOOST</a></span>
+                                        <span><a href="#">- THEME 2. COSMOS</a></span>
+                                        <span><a href="#">- THEME 3. OOPARTS</a></span>
+                                    </span>
+                                </span>
+                                <span>
+                                    <span class="main"><a href="#">2024 ME:nimal</a></span>
+                                    <span class="sub-list">
+                                        <span><a href="#">- THEME 1. EVOKE</a></span>
+                                        <span><a href="#">- THEME 2. ORE</a></span>
+                                        <span><a href="#">- THEME 3. FIND</a></span>
+                                    </span>
+                                </span>
+                                <span>
+                                    <span class="main"><a href="#">2023 SOFTWHERE</a></span>
+                                    <span class="sub-list">
+                                        <span><a href="#">- THEME 1. SCENESORY</a></span>
+                                        <span><a href="#">- THEME 2. MONOLOGUE</a></span>
+                                        <span><a href="#">- THEME 3. WHITE NIGHT</a></span>
+                                    </span>
+                                </span>
+                                <span>
+                                    <span class="main"><a href="#">이전 History</a></span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="">
+                            <span class="tit">Exhibition<span class="icon"></span></span>
+                            <span class="links">
+                                <span>
+                                    <span class="main"><a href="#">EP.04 Maison de Synergy</a></span>
+                                    <span class="sub-list">
+                                        <span><a href="#">- Synergy Lookbook</a></span>
+                                    </span>
+                                </span>
+                                <span
+                                    ><span class="main"><a href="#">EP.03 낯선사진관</a></span></span
+                                >
+                                <span
+                                    ><span class="main"><a href="#">EP.02 the way've</a></span></span
+                                >
+                                <span
+                                    ><span class="main"><a href="#">EP.01 HAUSYS WITH HAUSYSWEET</a></span></span
+                                >
+                            </span>
+                        </li>
+                        <li><a class="tit" href="#">Event</a></li>
+                        <li><a class="tit" href="#">FAQ</a></li>
+                        <li><a class="tit" href="#">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="menu-bottom">
+                    <div class="langs">
+                        <a class="btn-lang active" href="#">KOR</a><a class="btn-lang" href="#">ENG</a>
+                    </div>
+                </div>
+            </aside> -->
+            <!-- <aside class="menu-modal" data-modal="trend">
+                <div class="menus">
+                    <span>
+                        <span class="main"><a href="#">2025 SY(E)NERGY</a></span>
+                        <span class="sub-list">
+                            <span><a href="#">- THEME 1. BOOST</a></span>
+                            <span><a href="#">- THEME 2. COSMOS</a></span>
+                            <span><a href="#">- THEME 3. OOPARTS</a></span>
+                        </span>
+                    </span>
+                    <span>
+                        <span class="main"><a href="#">2024 ME:nimal</a></span>
+                        <span class="sub-list">
+                            <span><a href="#">- THEME 1. EVOKE</a></span>
+                            <span><a href="#">- THEME 2. ORE</a></span>
+                            <span><a href="#">- THEME 3. FIND</a></span>
+                        </span>
+                    </span>
+                    <span>
+                        <span class="main"><a href="#">2023 SOFTWHERE</a></span>
+                        <span class="sub-list">
+                            <span><a href="#">- THEME 1. SCENESORY</a></span>
+                            <span><a href="#">- THEME 2. MONOLOGUE</a></span>
+                            <span><a href="#">- THEME 3. WHITE NIGHT</a></span>
+                        </span>
+                    </span>
+                    <span>
+                        <span class="main"><a href="#">이전 History</a></span>
+                    </span>
+                </div>
+            </aside>
+            <aside class="menu-modal" data-modal="exhibition">
+                <div class="menus">
+                    <span>
+                        <span class="main"><a href="#">EP.04 Maison de Synergy</a></span>
+                        <span class="sub-list">
+                            <span><a href="#">- Synergy Lookbook</a></span>
+                        </span>
+                    </span>
+                    <span
+                        ><span class="main"><a href="#">EP.03 낯선사진관</a></span></span
+                    >
+                    <span
+                        ><span class="main"><a href="#">EP.02 the way've</a></span></span
+                    >
+                    <span
+                        ><span class="main"><a href="#">EP.01 HAUSYS WITH HAUSYSWEET</a></span></span
+                    >
+                </div>
+            </aside> -->
+        </header>
+        <div class="loading2025"></div>
+        <main class="content">
+            <div class="trendship2025">
+                <div class="main">
+                    <section class="visual" data-header-bg="#fff"></section>
+                    <section class="overview" data-header-bg="#fff"></section>
+                    <section class="syenergy" data-header-bg="#000"></section>
+                    <section class="syenergy-desc" data-header-bg="#000"></section>
+                    <section class="theme" data-header-bg="#000"></section>
+                    <section class="offline" data-header-bg="##ebd0ca"></section>
+                    <section class="about" data-header-bg="#fff"></section>
+                    <section class="about-desc"></section>
+                </div>
+            </div>
+        </main>
+        <footer class="footer2025"></footer>
+    </body>
+</html>
